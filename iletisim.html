@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>İletişim – Mert</title>
+  <link rel="stylesheet" href="iletisim.css"/>
+</head>
+<body>
+  <div class="container">
+
+    <!-- SOL PANEL -->
+    <div class="left">
+
+      <!-- Tema switch -->
+      <div class="theme-switch" id="theme-switch">
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle">
+          <span class="icon-moon">🌙</span>
+          <span class="icon-sun">☀️</span>
+          <div class="slider"></div>
+        </label>
+      </div>
+
+      <!-- İLETİŞİM FORMU -->
+      <form class="contact-form"
+            action="mail.php"
+            method="POST">
+
+        <!-- Eğer gönderim sonrası özel bir sayfaya yönlendirmek isterseniz: -->
+        <input type="hidden"
+               name="_next"
+               value="https://mertakdulum.com.tr/tesekkur.html" />
+
+        <div class="form-group">
+          <label for="firstName">Adınız</label>
+          <input type="text"
+                 id="firstName"
+                 name="firstName"
+                 required />
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Soyadınız</label>
+          <input type="text"
+                 id="lastName"
+                 name="lastName"
+                 required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-posta adresiniz</label>
+          <input type="email"
+                 id="email"
+                 name="email"
+                 required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Sorularınız...</label>
+          <textarea id="message"
+                    name="message"
+                    rows="5"
+                    required></textarea>
+        </div>
+
+        <button type="submit">Mesaj Gönder</button>
+      </form>
+
+      <!-- Küçük resim kartları -->
+      <div class="thumbnails">
+        <img class="thumbnail" src="denemefoto92.jpg" alt="Hobi 1"/>
+        <img class="thumbnail" src="denemefoto49.jpg" alt="Hobi 2"/>
+      </div>
+
+      <!-- Alt sosyal ikonlar -->
+      <div class="circle-buttons">
+        <a href="https://github.com/USERNAME" target="_blank" rel="noopener">
+          <img src="githublogo.jpg" alt="GitHub"/>
+        </a>
+        <a href="https://linkedin.com/in/USERNAME" target="_blank" rel="noopener">
+          <img src="linkedinLogo.jpg" alt="LinkedIn"/>
+        </a>
+        <a href="https://instagram.com/USERNAME" target="_blank" rel="noopener">
+          <img src="instalogo.webp" alt="Instagram"/>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- SAĞ PANEL -->
+    <div class="right">
+      <div class="main-image">
+        <div class="nav">
+          <a class="nav-link"  href="index.html">Anasayfa</a>
+          <a class="nav-link"  href="hakkimda.html">Hakkımda</a>
+          <a class="nav-link"  href="proje.html">Proje</a>
+          <a class="nav-link"  href="cv.html">CV</a>
+          <a class="nav-link active" href="iletisim.html">İletişim</a>
+        </div>
+        <img class="image-content" src="denemefoto56.jpg" alt="Büyük Resim"/>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="topla.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Anasayfa – Mert</title>
+
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+  <div class="container">
+
+    <!-- SOL PANEL -->
+    <div class="left">
+
+      <!-- Tema switch -->
+      <div class="theme-switch" id="theme-switch">
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle">
+          <span class="icon-moon">🌙</span>
+          <span class="icon-sun">☀️</span>
+          <div class="slider"></div>
+        </label>
+      </div>
+
+      <!-- GİRİŞ BAŞLIĞI -->
+      <h1 class="intro-title">
+        <span>Merhabalar, Ben</span>
+        <span class="muted">Yazılımcı Mert</span>
+        <span>Sorun Çözerim</span>
+      </h1>
+
+      <!-- Küçük resim kartları -->
+      <div class="thumbnails">
+        <img class="thumbnail" src="denemefoto7.jpg" alt="Hobi 1"/>
+        <img class="thumbnail" src="denemefoto17.jpg" alt="Hobi 2"/>
+      </div>
+
+      <!-- Alt sosyal ikonlar -->
+      <div class="circle-buttons">
+        <a href="https://github.com/USERNAME" target="_blank" rel="noopener">
+          <img src="githublogo.jpg" alt="GitHub"/>
+        </a>
+        <a href="https://linkedin.com/in/USERNAME" target="_blank" rel="noopener">
+          <img src="linkedinLogo.jpg" alt="LinkedIn"/>
+        </a>
+        <a href="https://instagram.com/USERNAME" target="_blank" rel="noopener">
+          <img src="instalogo.webp" alt="Instagram"/>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- SAĞ PANEL -->
+    <div class="right">
+      <div class="main-image">
+        <div class="nav">
+          <a class="nav-link active" href="anasayfa.html">Anasayfa</a>
+          <a class="nav-link" href="hakkimda.html">Hakkımda</a>
+          <a class="nav-link" href="proje.html">Proje</a>
+          <a class="nav-link" href="cv.html">CV</a>
+          <a class="nav-link" href="iletisim.html">İletişim</a>
+        </div>
+        <!-- Video -->
+        <video
+          class="video-content"
+          src="video2.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="topla.js"></script>
+</body>
+</html>

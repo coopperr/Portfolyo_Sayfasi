@@ -1,0 +1,314 @@
+/* ==== RESET & BOX-SIZING ==== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==== GLOBAL & LAYOUT ==== */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: #fff;          /* Aydınlık mod arka planı */
+  color: #000;               /* Aydınlık mod metin rengi */
+  transition: background .3s, color .3s;
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* ==== SOL PANEL ==== */
+.left {
+  flex: 1;
+  position: relative;
+  background-color: #fff;    /* Aydınlık mod */
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  transition: background .3s, color .3s;
+}
+
+/* ==== TEMA SWITCH ==== */
+.theme-switch {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 4px;
+  background: rgba(255,255,255,0.8);
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  transition: background .3s, border-color .3s;
+}
+.theme-switch input { display: none; }
+.theme-switch label {
+  display: block;
+  width: 50px;
+  height: 24px;
+  background-color: #ff4500;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background .3s;
+}
+.theme-switch .slider {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 20px; height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform .3s;
+}
+.theme-switch .icon-moon,
+.theme-switch .icon-sun {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.theme-switch .icon-moon {
+  left: 8px; color: #ff4500; opacity: 0;
+}
+.theme-switch .icon-sun {
+  right: 8px; color: #000;    opacity: 1;
+}
+.theme-switch input:checked + label {
+  background-color: #111;
+}
+.theme-switch input:checked + label .slider {
+  transform: translateX(26px);
+}
+.theme-switch input:checked + label .icon-moon {
+  opacity: 1;
+}
+.theme-switch input:checked + label .icon-sun {
+  opacity: 0;
+}
+
+/* ==== İLETİŞİM FORMU ==== */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.contact-form label {
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: #000;
+  outline: none;
+  transition: border-color .3s, color .3s;
+}
+.contact-form textarea {
+  border-radius: 1rem;
+  resize: none;
+}
+.contact-form button {
+  background: #ff9800;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform .2s, background .3s;
+}
+.contact-form button:hover {
+  transform: translateY(-2px);
+  background: #e68900;
+}
+
+/* ==== KÜÇÜK RESİM KARTLARI ==== */
+.thumbnails {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 20px;
+}
+.thumbnails .thumbnail {
+  width: 100px;
+  height: 150px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* ==== ALT SOSYAL İKONLAR ==== */
+.circle-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+}
+.circle-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform .2s, border-color .3s;
+}
+.circle-buttons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.circle-buttons a:hover {
+  transform: scale(1.1);
+  border-color: #555;
+}
+
+/* ==== SAĞ PANEL ==== */
+.right {
+  width: 40vw;
+  flex-shrink: 0;
+  position: relative;
+  background-color: #fff;     /* Aydınlık mod arka plan */
+  padding: 20px;
+  transition: background .3s;
+}
+
+/* ==== BÜYÜK GÖRSEL ALANI & NAV ==== */
+.main-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.main-image .nav {
+  position: absolute;
+  top: 20px; right: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+.main-image .nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.1);
+  border: 2px solid #000;
+  border-radius: 12px;
+  color: #000;
+  text-decoration: none;
+  transition: background .2s, transform .2s, border-color .3s;
+}
+.main-image .nav-link:hover,
+.main-image .nav-link:focus {
+  background: rgba(0,0,0,0.2);
+}
+.main-image .nav-link.active {
+  background: #ff9800;
+  border-color: #ff9800;
+  color: #000;
+}
+.image-content,
+.video-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ==== GECE MODU OVERRIDES ==== */
+body.dark-theme {
+  background: #000;
+  color: #fff;
+}
+body.dark-theme .left {
+  background-color: #000;
+  color: #fff;
+}
+body.dark-theme .right {
+  background-color: #000;
+}
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+  border-color: #fff;
+  color: #fff;
+}
+body.dark-theme .contact-form button {
+  background: #ff9800;
+  color: #000;
+}
+body.dark-theme .circle-buttons a {
+  border-color: #fff;
+}
+body.dark-theme .circle-buttons a:hover {
+  border-color: #ccc;
+}
+body.dark-theme .main-image .nav-link {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border-color: #fff;
+}
+body.dark-theme .main-image .nav-link:hover,
+body.dark-theme .main-image .nav-link:focus {
+  background: rgba(255,255,255,0.4);
+}
+body.dark-theme .main-image .nav-link.active {
+  background: #ff9800;
+  border-color: #ff9800;
+  color: #000;
+}
+/* ==== NAV BUTONLARI (AÇIK MOD) ==== */
+.main-image .nav .nav-link {
+  background: rgba(255,255,255,0.9);
+  border: 2px solid #000;
+  color: #000;
+  transition: background .2s, transform .2s, color .3s, border-color .3s;
+}
+.main-image .nav .nav-link:hover,
+.main-image .nav .nav-link:focus {
+  background: #fff;
+  transform: translateY(-2px);
+}
+.main-image .nav .nav-link.active {
+  background: #ff9800;
+  border-color: #ff9800;
+  color: #fff;
+}
+
+/* ==== NAV BUTONLARI (KOYU MOD OVERRIDES) ==== */
+body.dark-theme .main-image .nav .nav-link {
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+  color: #fff;
+}
+body.dark-theme .main-image .nav .nav-link:hover,
+body.dark-theme .main-image .nav .nav-link:focus {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+body.dark-theme .main-image .nav .nav-link.active {
+  background: #ff9800;
+  border-color: #ff9800;
+  color: #000;
+}
